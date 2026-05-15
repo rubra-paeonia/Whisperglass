@@ -677,6 +677,90 @@
       box-shadow: 0 20px 80px rgba(0, 0, 0, 0.7);
     }
 
+    /* ── PLAYLIST EMBED ── */
+    .playlist-section {
+      max-width: 900px;
+      margin: 0 auto 4rem;
+      padding: 0 2rem;
+    }
+
+    .playlist-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .playlist-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.5em;
+      color: var(--blood);
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+
+    .playlist-title {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      color: var(--text-bright);
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 30px rgba(139, 0, 0, 0.5);
+      margin-bottom: 0.5rem;
+    }
+
+    .playlist-desc {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: var(--text-dim);
+      max-width: 460px;
+      margin: 0.5rem auto 0;
+    }
+
+    .playlist-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      max-width: 500px;
+      margin: 1.25rem auto 0;
+    }
+
+    .playlist-divider::before,
+    .playlist-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim));
+    }
+
+    .playlist-divider::after {
+      background: linear-gradient(to left, transparent, var(--gold-dim));
+    }
+
+    .playlist-divider-gem {
+      width: 5px;
+      height: 5px;
+      background: var(--crimson);
+      transform: rotate(45deg);
+      flex-shrink: 0;
+    }
+
+    .playlist-embed {
+      position: relative;
+      border: 1px solid rgba(201, 168, 76, 0.15);
+      border-radius: 13px;
+      box-shadow: 0 8px 60px rgba(0, 0, 0, 0.7), 0 0 40px rgba(139, 0, 0, 0.08);
+    }
+
+    .playlist-embed iframe {
+      width: 100%;
+      aspect-ratio: 16/9;
+      height: auto;
+      display: block;
+      border: none;
+      filter: brightness(0.96) saturate(0.9);
+    }
+
     /* FOOTER */
     footer {
       padding: 4rem 2rem;
@@ -764,6 +848,10 @@
       * {
         -webkit-print-color-adjust: exact !important;
         print-color-adjust: exact !important;
+      }
+
+      .playlist-section {
+        display: none;
       }
     }
   </style>
@@ -888,21 +976,23 @@
           subterranean levels, the harbor's eastern end, and the theater district, of which Whisperglass's neighborhood
           is a part. These areas are not exclusively supernatural, but they are comfortable with the presence of things
           that don't explain themselves.</p>
-        <p>The city has a character to it that longtime residents describe as <em>watchfulness</em>. It pays attention. What it
-          does with that attention is a matter of ongoing theological debate.</p>
+        <p>The city has a character to it that longtime residents describe as <em>watchfulness</em>. It pays attention.
+          What it does with that attention is a matter of ongoing theological debate.</p>
       </div>
 
     </div>
   </section>
-    <div class="location-spread">
-      <img src="https://i.postimg.cc/xj3g0h7x/Entrance.png" alt="Whisperglass Entrance">
-      <div class="location-spread-caption">
-        <div>
-          <div class="location-spread-label">The Entrance</div>
-          <div class="location-spread-name">A black-lacquered door. Unmarked. Easy to miss.</div>
-        </div>
+
+  <div class="location-spread">
+    <img src="https://i.postimg.cc/xj3g0h7x/Entrance.png" alt="Whisperglass Entrance">
+    <div class="location-spread-caption">
+      <div>
+        <div class="location-spread-label">The Entrance</div>
+        <div class="location-spread-name">A black-lacquered door. Unmarked. Easy to miss.</div>
       </div>
     </div>
+  </div>
+
   <!-- SECTION II: WHISPERGLASS -->
   <section id="whisperglass">
     <div class="section-header">
@@ -951,9 +1041,9 @@
           menu is handwritten each evening. The wine is always good. The cocktails are occasionally dangerous in ways
           the menu does not specify.</p>
         <p>Phones work inside Whisperglass, technically. The wifi is notoriously unreliable, cameras produce images that
-          come out wrong in ways that are hard to describe, and there is an unspoken feeling in the room that makes people put
-          their phones away without quite deciding to. No recording has ever successfully captured the performances.
-          Whether this is enchantment or atmosphere is, at this point, an academic distinction.</p>
+          come out wrong in ways that are hard to describe, and there is an unspoken feeling in the room that makes
+          people put their phones away without quite deciding to. No recording has ever successfully captured the
+          performances. Whether this is enchantment or atmosphere is, at this point, an academic distinction.</p>
       </div>
 
       <div class="entry">
@@ -1161,8 +1251,9 @@
         <p>He does not discuss what he is. Staff know better than to ask. His eyes are an unusual pale amber that most
           people avoid holding for long.</p>
         <p>Enforcement of the rules falls to him when Morrow's pleasant reminder proves insufficient. He has never
-          raised his voice. He has never needed to. There is something in his stillness that communicates, without language, that the conversation has already concluded and
-          the other person should choose their next movement carefully.</p>
+          raised his voice. He has never needed to. There is something in his stillness that communicates, without
+          language, that the conversation has already concluded and the other person should choose their next movement
+          carefully.</p>
         <p>He has worked at Whisperglass for at least twenty years by anyone's count. He looks exactly the same as he
           apparently always has. No one on staff has asked him about this directly. No one intends to.</p>
       </div>
@@ -1180,8 +1271,8 @@
           impression of knowing far more than she says while saying nothing at all.</p>
         <p>Both are practitioners of some variety. Both deny this if asked.</p>
         <p>New staff at Whisperglass tend to last either one week or several years, with very little middle ground.
-          Those who stay past the first month start moving in an unhurried manner and develop the habit of
-          measuring each word before releasing it.</p>
+          Those who stay past the first month start moving in an unhurried manner and develop the habit of measuring
+          each word before releasing it.</p>
       </div>
 
       <div class="entry">
@@ -1192,10 +1283,10 @@
           <img src="https://i.postimg.cc/jdJ56Yb3/Stage.png" alt="The Stage">
           <figcaption>The stage, set and waiting.</figcaption>
         </figure>
-        <p>The house band has three members: a pianist, a bassist, and a player who moves between clarinet and something that looks
-        like a clarinet but isn't. Their names are not on any program. They have been at Whisperglass long enough that regulars
-        no longer register them as individuals; they are experienced instead as a property of the room, like the candlelight or
-        the air itself.</p>
+        <p>The house band has three members: a pianist, a bassist, and a player who moves between clarinet and something
+          that looks like a clarinet but isn't. Their names are not on any program. They have been at Whisperglass long
+          enough that regulars no longer register them as individuals; they are experienced instead as a property of the
+          room, like the candlelight or the air itself.</p>
         <p>The music they play is jazz-inflected but drifts. On quiet nights it is slow and melancholic. On crowded
           nights it fills the room without overwhelming conversation. On nights when the balance is off, when something
           old is watching from a corner, or when the tension in the booths is running high, the music shifts in ways
@@ -1227,10 +1318,10 @@
         <p>First-timers arrive at Whisperglass one of two ways: brought by someone who knows the place, or having found
           it themselves through the particular combination of need and instinct that leads people to doors that
           shouldn't be findable.</p>
-        <p>Either way they arrive with the same signs: heightened alertness, a rapid scanning of the room, the attempt to
-        categorize what they're seeing against frameworks that don't quite fit. Some are from the hidden society and are simply
-        new to this specific room. Some are mundane humans who have stumbled onto the edge of something they don't yet have
-        language for.</p>
+        <p>Either way they arrive with the same signs: heightened alertness, a rapid scanning of the room, the attempt
+          to categorize what they're seeing against frameworks that don't quite fit. Some are from the hidden society
+          and are simply new to this specific room. Some are mundane humans who have stumbled onto the edge of something
+          they don't yet have language for.</p>
         <p>Staff can identify a newcomer within seconds and treat them with a particular calibrated courtesy: warm
           enough to be disarming, uninformative enough to be safe. Regulars tend to leave newcomers alone for the first
           visit, a courtesy that functions also as a kind of observation period. What a newcomer does in their first
@@ -1241,10 +1332,10 @@
         <div class="entry-header">
           <span class="entry-title">The Faction Representative</span>
         </div>
-        <p>Faction representatives come to Whisperglass on business, using the booths, meeting contacts, conducting the kind of
-        negotiation that requires neutral ground. They are identifiable by a particular manner of attention: present in the room
-        but never fully part of it, watching the performances from a measured distance, fundamentally elsewhere even when
-        appearing relaxed.</p>
+        <p>Faction representatives come to Whisperglass on business, using the booths, meeting contacts, conducting the
+          kind of negotiation that requires neutral ground. They are identifiable by a particular manner of attention:
+          present in the room but never fully part of it, watching the performances from a measured distance,
+          fundamentally elsewhere even when appearing relaxed.</p>
         <p>They observe the rules with precision because they understand exactly what they're worth and cannot afford
           the political cost of a violation. The hidden society has an informal understanding about faction
           representatives at Whisperglass: you do not conduct surveillance on them here, you do not follow them when
@@ -1627,6 +1718,22 @@
   <!-- BUSINESS CARD SPREAD -->
   <div class="card-spread">
     <img src="https://i.postimg.cc/tRNDXwft/Business-Card.png" alt="Whisperglass Business Card">
+  </div>
+
+  <!-- PLAYLIST -->
+  <div class="playlist-section">
+    <div class="playlist-header">
+      <span class="playlist-eyebrow">The Setlist</span>
+      <h2 class="playlist-title">No Recording Has Ever Captured It</h2>
+      <p class="playlist-desc">What the house band plays. What lingers after the room empties.</p>
+      <div class="playlist-divider"><span class="playlist-divider-gem"></span></div>
+    </div>
+    <div class="playlist-embed">
+      <iframe data-testid="embed-iframe" style="border-radius:12px"
+        src="https://open.spotify.com/embed/playlist/3msnUfoSObQOIytCenA6CN?utm_source=generator&theme=0" width="100%"
+        height="352" frameBorder="0" allowfullscreen=""
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </div>
   </div>
 
   <!-- FOOTER -->
