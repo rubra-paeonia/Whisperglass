@@ -645,7 +645,6 @@
       line-height: 1.55;
     }
 
-    /* READ MORE BUTTON */
     .syndicate-card-btn {
       display: inline-block;
       margin-top: 0.6rem;
@@ -810,6 +809,82 @@
       margin: 0;
     }
 
+    /* SYNDICATE HERO BANNER */
+    .syndicate-hero {
+      position: relative;
+      height: 340px;
+      overflow: hidden;
+    }
+
+    .syndicate-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center center;
+      filter: brightness(0.3) saturate(0.75);
+      transition: filter 0.8s ease;
+    }
+
+    .syndicate-hero:hover .syndicate-hero-bg {
+      filter: brightness(0.42) saturate(0.9);
+    }
+
+    .syndicate-hero-gradient {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom,
+          rgba(10, 6, 8, 0.5) 0%,
+          rgba(10, 6, 8, 0.05) 30%,
+          rgba(10, 6, 8, 0.05) 55%,
+          rgba(10, 6, 8, 0.92) 100%);
+    }
+
+    .syndicate-hero-content {
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 2rem 2.5rem;
+      text-align: center;
+    }
+
+    .syndicate-hero-eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.5em;
+      color: var(--gold-dim);
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .syndicate-hero-name {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      color: var(--text-bright);
+      letter-spacing: 0.05em;
+      text-shadow: 0 0 50px rgba(139, 0, 0, 0.9), 0 2px 10px rgba(0, 0, 0, 1);
+      line-height: 1;
+      margin-bottom: 0.75rem;
+    }
+
+    .syndicate-hero-rule {
+      width: 180px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold-dim), transparent);
+      margin-bottom: 0.75rem;
+    }
+
+    .syndicate-hero-territory {
+      font-family: 'Cinzel', serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.45em;
+      color: var(--gold);
+      text-transform: uppercase;
+    }
+
     /* NPC roster strip */
     .npc-row {
       display: grid;
@@ -903,6 +978,14 @@
       .cover-title {
         font-size: 2.2rem;
       }
+
+      .syndicate-hero {
+        height: 240px;
+      }
+
+      .syndicate-hero-name {
+        font-size: 2rem;
+      }
     }
 
     @media print {
@@ -936,7 +1019,8 @@
       .npc-row,
       .map-spread,
       .location-spread,
-      .card-spread {
+      .card-spread,
+      .syndicate-hero {
         break-inside: avoid;
         page-break-inside: avoid;
       }
@@ -1005,10 +1089,8 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">World Summary</span>
-        </div>
-        <p>This is a contemporary urban fantasy world. The city is unnamed, large, and old — a modern metropolis with
+        <div class="entry-header"><span class="entry-title">World Summary</span></div>
+        <p>This is a contemporary urban fantasy world. The city is unnamed, large, and old - a modern metropolis with
           neon-lit streets, surveillance cameras, and smartphones coexisting with a hidden supernatural underworld that
           most humans never see. Vampires, witches, shapeshifters, demons, fae, ghosts, old gods, and beings without
           category move through the city alongside ordinary people, operating under their own politics and etiquette.
@@ -1021,9 +1103,7 @@
           grim. People are complicated. Power matters. Beauty is real and so are consequences.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Tone &amp; Register</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Tone &amp; Register</span></div>
         <p>Whisperglass and its world operate in a register that might be described as <em>noir-adjacent glamour with
             genuine stakes</em>. It is not a comedic setting, but it has dry wit. It is not gratuitously dark, but it
           does not soften consequences. Violence exists and matters; it is not choreographed spectacle. Death is real.
@@ -1041,9 +1121,7 @@
           happens to them.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">What Whisperglass Is Not</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">What Whisperglass Is Not</span></div>
         <div class="rules-block" data-label="Tone Guide">
           <p>Whisperglass is not a comedy club. Humor exists, dry, dark, situational, but broad comedy, slapstick, or
             ironic detachment that undercuts genuine stakes breaks the room's register.</p>
@@ -1059,9 +1137,7 @@
         </div>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The City Itself</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The City Itself</span></div>
         <p>The city is never named in polite hidden-society conversation, a superstition of long standing, on the theory
           that naming a place too precisely gives it opinions about you. Locals simply call it <em>the city</em>, or
           occasionally <em>the old city</em> when they mean the parts that predate anyone's memory.</p>
@@ -1099,9 +1175,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Club</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Club</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/BbjvwdPV/Main-Floor.png" alt="Main Floor">
           <figcaption>The main floor, before the night begins.</figcaption>
@@ -1120,9 +1194,7 @@
         <p>Whisperglass runs six nights a week. What happens on the seventh no one discusses.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Atmosphere</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Atmosphere</span></div>
         <p>The air inside Whisperglass is warm and slightly too close: cigarette smoke, expensive perfume, spilled
           drinks absorbed long ago into the upholstery, and underneath it all something faintly sweet that no one has
           ever identified. Red neon washes everything, faces, glasses, the backs of hands. Green light catches the bar
@@ -1140,9 +1212,7 @@
           performances. Whether this is enchantment or atmosphere is, at this point, an academic distinction.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Rules of Whisperglass</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Rules of Whisperglass</span></div>
         <div class="rules-block" data-label="The Three Rules">
           <p><strong>1. No violence on the floor.</strong> Grudges, contracts, vendettas: all of it waits outside. The
             building enforces this in ways that vary by account; some say the walls themselves repel hostile magic,
@@ -1160,9 +1230,7 @@
           done with some elegance.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Curtained Booths</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Curtained Booths</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/3N1Zn0mK/Booth.png" alt="Curtained Booth 4B">
           <figcaption>Booth 4B. Reservations handled discreetly.</figcaption>
@@ -1180,9 +1248,7 @@
           patrons warn against pressing it without being very clear on what you want.</blockquote>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Neutral Ground Enchantment</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Neutral Ground Enchantment</span></div>
         <p>The neutral ground status of Whisperglass is not purely social convention. The building is warded,
           extensively, by someone with considerable skill, at a point in its history that no current occupant can
           precisely date.</p>
@@ -1233,9 +1299,7 @@
         </div>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Backstage</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Backstage</span></div>
         <p>The backstage area of Whisperglass is significantly larger than the building's exterior dimensions suggest it
           should be. This is not discussed.</p>
         <p>It looks like what it is: a working performance space that has been accumulating decades of residue. Vanity
@@ -1253,9 +1317,7 @@
           quickly and not look at the mirrors.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Seventh Night</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Seventh Night</span></div>
         <p>Whisperglass is closed one night a week. Which night varies; it is never announced in advance and follows no
           consistent pattern that patrons have successfully mapped. It simply does not open. The lights are off. The
           door, when tested, is not there.</p>
@@ -1270,9 +1332,7 @@
           again.</blockquote>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Absent Owner</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Absent Owner</span></div>
         <p>Whisperglass has an owner. This is known. Renata Morrow manages the club on their behalf, handles day-to-day
           operations, represents their interests in dealings with the factions, and maintains the fiction, if it is a
           fiction, that she is simply staff.</p>
@@ -1303,9 +1363,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Renata Morrow — The Manager</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Renata Morrow - The Manager</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/nVWrQc6x/Morrow-s-office.png" alt="Morrow's Office">
           <figcaption>Morrow's office. Always locked.</figcaption>
@@ -1325,9 +1383,7 @@
         </p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Idris — Head of Security</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Idris - Head of Security</span></div>
         <p>Idris stands at the entrance, and occasionally at the edge of the stage, and in several places simultaneously
           if the night gets complicated. He is tall in the manner of something that decided to be as tall as necessary,
           quiet in a way that suggests the quiet is a choice.</p>
@@ -1341,9 +1397,7 @@
           apparently always has. No one on staff has asked him about this directly. No one intends to.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Yemi &amp; Sabine — Servers</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Yemi &amp; Sabine - Servers</span></div>
         <p>The servers of Whisperglass operate under the half-mask rule and are accordingly slightly anonymous by
           design. Yemi and Sabine are the two who have been there longest and are, for most regulars, the primary human
           face of the club's service.</p>
@@ -1357,9 +1411,7 @@
           each word before releasing it.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The House Band</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The House Band</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/jdJ56Yb3/Stage.png" alt="The Stage">
           <figcaption>The stage, set and waiting.</figcaption>
@@ -1376,9 +1428,7 @@
         </p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Regular</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Regular</span></div>
         <p>Regulars at Whisperglass have passed through the initial phase of the club, the disorientation, the hunger to
           understand everything, the attempts to decode what they're seeing, and arrived somewhere quieter. They come
           because it is theirs in the way that a place becomes yours after enough years: through accumulated evenings,
@@ -1391,9 +1441,7 @@
           reveals nothing about any of them to anyone else.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Newcomer</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Newcomer</span></div>
         <p>First-timers arrive at Whisperglass one of two ways: brought by someone who knows the place, or having found
           it themselves through the particular combination of need and instinct that leads people to doors that
           shouldn't be findable.</p>
@@ -1407,9 +1455,7 @@
           hour at Whisperglass tends to predict accurately whether they'll become a regular or never return.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Faction Representative</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Faction Representative</span></div>
         <p>Faction representatives come to Whisperglass on business, using the booths, meeting contacts, conducting the
           kind of negotiation that requires neutral ground. They are identifiable by a particular manner of attention:
           present in the room but never fully part of it, watching the performances from a measured distance,
@@ -1436,9 +1482,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The City's Hidden Society</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The City's Hidden Society</span></div>
         <p>The city has two faces. The surface belongs to the mundane world: traffic, bureaucracy, the ordinary grind.
           Threaded beneath it, running through every alley and institution, is the hidden society: a loose, fractious,
           occasionally violent ecosystem of supernatural beings, magical practitioners, old powers, and those who serve
@@ -1453,9 +1497,7 @@
           in the right company are binding in ways that go beyond social pressure.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Vampires</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Vampires</span></div>
         <p>Vampires in this city are old money and older grudges. The established bloodlines, families operating here
           for a century or more, are integrated into legitimate institutions: finance, law, certain branches of
           government. They dress well, conduct themselves with deliberate civility, and are quietly terrifying.</p>
@@ -1470,9 +1512,7 @@
           to something that stopped needing to fidget several hundred years ago.</blockquote>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Witches &amp; Practitioners</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Witches &amp; Practitioners</span></div>
         <p>The city's magical practitioners range from formidable to desperate, and the line shifts faster than it
           should. Covens operate as a combination of professional guild, mutual aid network, and occasionally volatile
           political body. Independent practitioners, those unaffiliated with any coven, are viewed with a mixture of
@@ -1486,9 +1526,7 @@
           affecting the room.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Old Gods &amp; Hidden Powers</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Old Gods &amp; Hidden Powers</span></div>
         <p>The city is old enough to have accumulated things. Not all of them are neatly categorized.</p>
         <p>Old gods, beings that predate the city, some that predate the concept of cities, exist in a state of
           deliberate ambiguity. Some wear human forms so naturally they've forgotten they're wearing them. Some maintain
@@ -1501,9 +1539,7 @@
           performance and the performance is watching them back.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Species Framework</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Species Framework</span></div>
         <div class="rules-block" data-label="General Principles">
           <p><strong>Appearance is not nature.</strong> Glamour is common. Many beings present as human in everyday
             contexts. The effort required varies enormously; for some it is effortless, for others it is costly, and for
@@ -1518,9 +1554,7 @@
         </div>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Shapeshifters &amp; Skinwalkers</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Shapeshifters &amp; Skinwalkers</span></div>
         <p>The city has a significant population of shapeshifters, beings who move between human and animal (or
           animal-adjacent) forms. The most common are wolf-shifted, but the category is broader: bear, crow, serpent,
           and forms that don't map cleanly to any animal are all present in the hidden society.</p>
@@ -1533,9 +1567,7 @@
           room calibrated accordingly.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Fae &amp; Liminal Beings</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Fae &amp; Liminal Beings</span></div>
         <p>The fae of this city are not the twee creatures of human folklore. They are old, they are specific, and they
           are very particular about being accurately understood, which is to say, they are not remotely interested in
           being understood at all, but they will correct a mischaracterization with the kind of polite precision that
@@ -1547,9 +1579,7 @@
           intensity, something about the music reaches them in ways they rarely explain.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Demons &amp; Infernal Beings</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Demons &amp; Infernal Beings</span></div>
         <p>"Demon" is a category the hidden society uses loosely for a wide range of beings that originate from or are
           substantially constituted by infernal planes, infernal energy, or infernal compacts. What this means in
           practice varies enormously.</p>
@@ -1563,9 +1593,7 @@
           protects them as much as it protects anyone.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Ghosts &amp; The Restless Dead</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Ghosts &amp; The Restless Dead</span></div>
         <p>The city has a significant population of the dead who have not entirely departed. This is not unusual; cities
           accumulate grief. But the concentration here is higher than average, which practitioners attribute to whatever
           enigma makes the city watchful: the same attention that notices the living also, apparently, makes it
@@ -1578,9 +1606,7 @@
           are ghosts, images from another time, or something else entirely is not agreed upon.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Creatures Without Category</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Creatures Without Category</span></div>
         <p>The hidden society's taxonomies are useful working documents, not complete maps. Some beings that pass
           through Whisperglass's door don't fit any established category cleanly: old things, rare things, regional
           things, things that arrived through unusual circumstances and have been quietly present ever since.</p>
@@ -1603,9 +1629,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">An Overview</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">An Overview</span></div>
         <div class="syndicate-grid">
           <a class="syndicate-card" href="#usura">
             <div class="syndicate-card-photo">
@@ -1658,43 +1682,46 @@
   <!-- SECTION V-A: USURA -->
   <hr class="syndicate-separator">
   <section id="usura" class="syndicate-section">
-    <div class="syndicate-section-header section-header">
-      <span class="section-number">Section V — A</span>
-      <h2 class="section-title">Usura</h2>
+    <div class="syndicate-hero">
+      <div class="syndicate-hero-bg" style="background-image: url('https://i.postimg.cc/BbGD9Jvz/Usura-BG.png');"></div>
+      <div class="syndicate-hero-gradient"></div>
+      <div class="syndicate-hero-content">
+        <div class="syndicate-hero-eyebrow">Section V - A</div>
+        <div class="syndicate-hero-name">Usura</div>
+        <div class="syndicate-hero-rule"></div>
+        <div class="syndicate-hero-territory">The Pale Quarter</div>
+      </div>
+    </div>
+    <div class="syndicate-section-header section-header" style="padding-top: 3rem;">
       <p class="section-desc">Vampire-adjacent financial operation. Old money, older patience.</p>
       <div class="section-divider"><span class="section-divider-gem"></span></div>
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Overview</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Overview</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/nzQGG3Yg/Usura.png" alt="Usura crest"
             style="background: var(--dark-3); padding: 1rem; object-fit: contain; height: 180px;">
           <figcaption>The crest. It does not appear on official documents.</figcaption>
         </figure>
         <p>Usura is the oldest of the three syndicates operating in the district and the one most deeply embedded in
-          legitimate infrastructure. On the surface it is a private financial firm — wealth management, long-term
+          legitimate infrastructure. On the surface it is a private financial firm - wealth management, long-term
           investments, discrete loans to clients the ordinary banking sector won't touch. Below that surface it is the
           primary mechanism through which the city's vampire bloodlines consolidate, move, and protect their accumulated
           wealth across generations.</p>
-        <p>The name is not accidental. Usura has been charging interest on debts — financial, political, and otherwise —
+        <p>The name is not accidental. Usura has been charging interest on debts - financial, political, and otherwise -
           for longer than most of its competitors have existed. It does not need to be aggressive. It simply needs to be
           patient, and patience is one thing its principals have in abundance.</p>
         <p>Its crest is an art nouveau emblem: a martini glass with something dark and burning draining into it from a
           suspended vessel above, smoke curling from the surface, the whole thing framed in elegant organic tendrils
           that end in a downward point. It communicates pleasure, poison, and the slow accumulation of something that
           fills one drop at a time. Those who recognize it know what it means.</p>
-        <p>Its territory is the Pale Quarter — old financial district, stone buildings, narrow streets, the kind of
+        <p>Its territory is the Pale Quarter - old financial district, stone buildings, narrow streets, the kind of
           wealth that doesn't announce itself. Several of its principals hold permanent booth reservations at
           Whisperglass. They tip as though money is a language they speak fluently and enjoy demonstrating.</p>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Culture &amp; Methods</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Culture &amp; Methods</span></div>
         <div class="rules-block" data-label="How Usura Operates">
           <p>Usura does not threaten. Threatening is imprecise, and Usura values precision above almost everything else.
             It presents options. It outlines terms. It allows the other party to make a choice, and then it holds that
@@ -1706,25 +1733,24 @@
           <p>Working for Usura at any level involves an understanding that information flows upward. Staff are not asked
             to spy. They simply exist in proximity to things and people of interest, and Usura has always been patient
             about waiting for useful things to surface. Former employees are rare. Most find the arrangement comfortable
-            enough to maintain indefinitely — which is, of course, the design.</p>
+            enough to maintain indefinitely - which is, of course, the design.</p>
         </div>
       </div>
-
       <div class="npc-row">
         <div class="npc-card">
           <div class="npc-role">Leader</div>
           <div class="npc-name">Calloway</div>
-          <p class="npc-desc">Public face of Usura for as long as anyone can remember — long enough that whether they
+          <p class="npc-desc">Public face of Usura for as long as anyone can remember - long enough that whether they
             are the original Calloway or a successor who adopted the name is genuinely unanswerable. Apparent late
             forties. Impeccably dressed, silver-haired, <em>unhurried</em> in the manner of someone who has never once
-            been late because everything waits for them. Not warm. Not cruel. Precisely, specifically interested — in
+            been late because everything waits for them. Not warm. Not cruel. Precisely, specifically interested - in
             leverage, in information, in the long game. At Whisperglass they occupy the fifth booth by unspoken
             agreement and watch every performance with an attention that reveals nothing.</p>
         </div>
         <div class="npc-card">
           <div class="npc-role">Enforcer</div>
           <div class="npc-name">Seun</div>
-          <p class="npc-desc">Usura's problem resolution specialist. A turned vampire of perhaps forty years' standing —
+          <p class="npc-desc">Usura's problem resolution specialist. A turned vampire of perhaps forty years' standing -
             young enough to carry some visible edge, old enough to know when not to use it. Not large in the way of
             conventional enforcers. <em>Precise.</em> Economical in movement. Where Idris at Whisperglass is a wall,
             Seun is something that has already decided where to stand. When they appear at the club alone, it means
@@ -1733,25 +1759,22 @@
         <div class="npc-card">
           <div class="npc-role">Fixer</div>
           <div class="npc-name">Mireille</div>
-          <p class="npc-desc">The person you actually talk to when you want something from Usura. Human — one of a
-            small number of non-vampires in the inner structure. Charming in the professional sense: genuinely easy to
-            talk to, good at making people feel heard, absolutely clear about what she is and is not authorized to
-            offer. She does not oversell. She does not make promises Usura won't keep. This makes her, by hidden society
-            standards, <em>unusually trustworthy</em> as a first contact. She frequents Whisperglass independently and
-            has her own relationships with the staff.</p>
+          <p class="npc-desc">The person you actually talk to when you want something from Usura. Human - one of a small
+            number of non-vampires in the inner structure. Charming in the professional sense: genuinely easy to talk
+            to, good at making people feel heard, absolutely clear about what she is and is not authorized to offer. She
+            does not oversell. She does not make promises Usura won't keep. This makes her, by hidden society standards,
+            <em>unusually trustworthy</em> as a first contact. She frequents Whisperglass independently and has her own
+            relationships with the staff.</p>
         </div>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Relationships</span>
-        </div>
-        <p><strong>With Nodus:</strong> functional and financially entangled. Nodus relies on Usura for capital —
-          smuggling operations require liquidity — and Usura provides it at rates that ensure Nodus stays dependent
+        <div class="entry-header"><span class="entry-title">Relationships</span></div>
+        <p><strong>With Nodus:</strong> functional and financially entangled. Nodus relies on Usura for capital -
+          smuggling operations require liquidity - and Usura provides it at rates that ensure Nodus stays dependent
           without becoming resentful enough to look elsewhere. The two organizations do not like each other. They do not
           need to.</p>
         <p><strong>With Terminus:</strong> careful distance rooted in mutual incomprehension. Terminus's harbor compact
-          involves something old and non-negotiable that Usura cannot buy, leverage, or outlast — a situation Calloway
+          involves something old and non-negotiable that Usura cannot buy, leverage, or outlast - a situation Calloway
           finds genuinely irritating in the rare moments they allow themselves irritation. The two do not compete
           directly. They do not trust each other. The arrangement holds.</p>
         <p><strong>With the Office:</strong> Usura operates through legitimate cover so thoroughly maintained that any
@@ -1767,18 +1790,24 @@
   <!-- SECTION V-B: NODUS -->
   <hr class="syndicate-separator">
   <section id="nodus" class="syndicate-section">
-    <div class="syndicate-section-header section-header">
-      <span class="section-number">Section V — B</span>
-      <h2 class="section-title">Nodus</h2>
+    <div class="syndicate-hero">
+      <div class="syndicate-hero-bg" style="background-image: url('https://i.postimg.cc/DZGsMS7b/Nodus-BG.png');"></div>
+      <div class="syndicate-hero-gradient"></div>
+      <div class="syndicate-hero-content">
+        <div class="syndicate-hero-eyebrow">Section V - B</div>
+        <div class="syndicate-hero-name">Nodus</div>
+        <div class="syndicate-hero-rule"></div>
+        <div class="syndicate-hero-territory">The Market Quarter</div>
+      </div>
+    </div>
+    <div class="syndicate-section-header section-header" style="padding-top: 3rem;">
       <p class="section-desc">Practitioner smuggling network. Craft, connection, and carefully maintained deniability.
       </p>
       <div class="section-divider"><span class="section-divider-gem"></span></div>
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Overview</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Overview</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/Sszffg7r/Nodus.png" alt="Nodus crest"
             style="background: var(--dark-3); padding: 1rem; object-fit: contain; height: 180px;">
@@ -1788,61 +1817,56 @@
         <p>Nodus is the hidden society's primary logistics operation for things that shouldn't move but need to:
           unregistered practitioners who need to relocate before the Office finds them, magical goods outside
           Registry-approved categories, information certain parties would pay significantly to suppress, and
-          occasionally
-          people who need to disappear from one context and reappear in another without a traceable thread between the
-          two.</p>
-        <p>It operates out of the Market Quarter's subterranean levels — spaces below street level accessible through
+          occasionally people who need to disappear from one context and reappear in another without a traceable thread
+          between the two.</p>
+        <p>It operates out of the Market Quarter's subterranean levels - spaces below street level accessible through
           doors that move and addresses that change. It has no single headquarters. It has nodes: safe houses, workshop
           spaces, transit points maintained by practitioners who owe Nodus something or have decided the arrangement
           suits them.</p>
-        <p>Its crest is a ritual emblem: a coiling, knotted form resembling a figure-eight or double ouroboros
-          suspended within a large circle, bisected by a vertical axis, with tasseled cords hanging from either side.
-          It reads simultaneously as a binding knot, a practitioner's working circle, and something that ties itself and
-          cannot be easily undone. It appears on sealed correspondence and the inside of certain doors in the Market
-          Quarter's lower levels — never publicly displayed, immediately recognizable to those who need to find it.</p>
+        <p>Its crest is a ritual emblem: a coiling, knotted form resembling a figure-eight or double ouroboros suspended
+          within a large circle, bisected by a vertical axis, with tasseled cords hanging from either side. It reads
+          simultaneously as a binding knot, a practitioner's working circle, and something that ties itself and cannot
+          be easily undone. It appears on sealed correspondence and the inside of certain doors in the Market Quarter's
+          lower levels - never publicly displayed, immediately recognizable to those who need to find it.</p>
         <p>Nodus is not ideological. It moves things because the market exists and it is positioned to serve it. Its
           continued usefulness to the unregistered community is its primary protection: too embedded in too many
           people's survival to be easily dismantled.</p>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Culture &amp; Methods</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Culture &amp; Methods</span></div>
         <div class="rules-block" data-label="How Nodus Operates">
-          <p>Nodus operates on the principle of the node — distributed, redundant, no single point of failure.
+          <p>Nodus operates on the principle of the node - distributed, redundant, no single point of failure.
             Individual operatives know their immediate contacts and their immediate tasks. Very few people know the full
             shape of the network, and Ezra Vane prefers it that way. If any single part is compromised, the rest
             continues.</p>
           <p>Communication happens through channels that change on a schedule only Thessaly fully tracks. Safe houses
             are maintained by local practitioners who receive resources and protection in exchange for availability. The
-            subterranean Market Quarter levels are Nodus's most consistent physical presence — a geography that shifts
+            subterranean Market Quarter levels are Nodus's most consistent physical presence - a geography that shifts
             enough to be difficult to map but consistent enough that those who know it can navigate.</p>
           <p>Working with Nodus for the first time involves a contact chain: you reach Ciro or someone like him, the
-            request is assessed, a price is named. The price is not always monetary — information, future favors, and
-            specific skills are all acceptable currency. Once a transaction is complete, Nodus maintains a record of
-            it. Not as leverage, Ezra Vane would insist. Simply as accounting. Whether that distinction holds under
-            pressure is a question no one has yet needed to test publicly.</p>
+            request is assessed, a price is named. The price is not always monetary - information, future favors, and
+            specific skills are all acceptable currency. Once a transaction is complete, Nodus maintains a record of it.
+            Not as leverage, Ezra Vane would insist. Simply as accounting. Whether that distinction holds under pressure
+            is a question no one has yet needed to test publicly.</p>
         </div>
       </div>
-
       <div class="npc-row">
         <div class="npc-card">
           <div class="npc-role">Leader</div>
           <div class="npc-name">Ezra Vane</div>
           <p class="npc-desc">Built Nodus from a smaller, more chaotic operation into its current form over
-            approximately fifteen years. Human, registered — a layer of cover he maintains carefully — and a competent
-            practitioner in his own right. Practical to the point of seeming unromantic about his own organization.
-            Late thirties, looks it, doesn't carry himself with the <em>deliberate timelessness</em> of the supernatural
+            approximately fifteen years. Human, registered - a layer of cover he maintains carefully - and a competent
+            practitioner in his own right. Practical to the point of seeming unromantic about his own organization. Late
+            thirties, looks it, doesn't carry himself with the <em>deliberate timelessness</em> of the supernatural
             beings he routinely works alongside. At Whisperglass he is friendly with staff in a way that is genuine
-            rather than strategic — though for Ezra Vane, the line between the two is always thin.</p>
+            rather than strategic - though for Ezra Vane, the line between the two is always thin.</p>
         </div>
         <div class="npc-card">
           <div class="npc-role">Enforcer</div>
           <div class="npc-name">Thessaly</div>
           <p class="npc-desc">Unregistered, which given her role in an organization that moves unregistered
             practitioners is either poetic or simply efficient. A practitioner of significant ability whose discipline
-            is difficult to categorize — she works with thresholds, with the spaces between things. Does not present as
+            is difficult to categorize - she works with thresholds, with the spaces between things. Does not present as
             an enforcer in the conventional sense. Simply present in a way that escalates gradually: a stillness that
             gets heavier the longer a situation goes unresolved. Her relationship with Ezra Vane is old and complicated
             in ways <em>neither of them elaborates on publicly.</em></p>
@@ -1858,18 +1882,15 @@
             neither organization entirely approves of.</p>
         </div>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Relationships</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Relationships</span></div>
         <p><strong>With Usura:</strong> financial dependency and mutual irritation. Usura's capital keeps Nodus's
           operations liquid; Nodus's network provides Usura with logistical capabilities it couldn't maintain in-house
           without the visibility it doesn't want. The arrangement works. Neither organization would describe it as
           comfortable.</p>
         <p><strong>With Terminus:</strong> the most genuinely collegial of the three pairings. The two organizations
           operate in different enough spaces that competition is minimal, and Nodus has occasionally moved people or
-          goods through the harbor with Terminus's facilitation. The relationship is transactional but not hostile —
+          goods through the harbor with Terminus's facilitation. The relationship is transactional but not hostile -
           which by hidden society standards is practically warm. Ciro and Petra's personal relationship adds a layer of
           communication neither organization has formally acknowledged.</p>
         <p><strong>With the Office:</strong> Nodus's most significant ongoing tension. Registry enforcement puts the
@@ -1884,24 +1905,31 @@
   <!-- SECTION V-C: TERMINUS -->
   <hr class="syndicate-separator">
   <section id="terminus" class="syndicate-section">
-    <div class="syndicate-section-header section-header">
-      <span class="section-number">Section V — C</span>
-      <h2 class="section-title">Terminus</h2>
+    <div class="syndicate-hero">
+      <div class="syndicate-hero-bg" style="background-image: url('https://i.postimg.cc/yxz947Nw/Terminus-BG.png');">
+      </div>
+      <div class="syndicate-hero-gradient"></div>
+      <div class="syndicate-hero-content">
+        <div class="syndicate-hero-eyebrow">Section V - C</div>
+        <div class="syndicate-hero-name">Terminus</div>
+        <div class="syndicate-hero-rule"></div>
+        <div class="syndicate-hero-territory">The Eastern Harbor</div>
+      </div>
+    </div>
+    <div class="syndicate-section-header section-header" style="padding-top: 3rem;">
       <p class="section-desc">Human-led. Old debt, old water, old silence.</p>
       <div class="section-divider"><span class="section-divider-gem"></span></div>
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Overview</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Overview</span></div>
         <figure class="entry-image">
           <img src="https://i.postimg.cc/85rmmZB3/Terminus.png" alt="Terminus crest"
             style="background: var(--dark-3); padding: 1rem; object-fit: contain; height: 180px;">
           <figcaption>The crest. On Terminus shipping documents as a small watermark.</figcaption>
         </figure>
         <p>Terminus is the oldest human-led organization in the district and the one least interested in explaining
-          itself. It controls the harbor — specifically the eastern docks, where the city's edge becomes uncertain and
+          itself. It controls the harbor - specifically the eastern docks, where the city's edge becomes uncertain and
           the water behaves in ways that experienced sailors learn not to comment on. Its operations include legitimate
           shipping and logistics, unofficial customs facilitation, and the maintenance of a century-old compact with
           something in the eastern harbor that the organization's founding families made and have been honoring ever
@@ -1912,46 +1940,42 @@
           difficult to attribute.</p>
         <p>Terminus's crest is an architectural emblem: a grand gate or archway rendered in dark iron, two classical
           columns flanking a threshold, a T-cross suspended above like a lintel, a single burning light at the base of
-          the opening — a door between spaces, guarded, with a spear point at the top and its reflection below as
-          though the gate descends as much as it rises. It is the image of a threshold that has always been tended and
-          always will be. It appears on Terminus shipping documents as a small watermark, and on the doors of certain
-          harbor buildings that have been there longer than the buildings around them.</p>
-        <p>At Whisperglass, Terminus representatives are less frequent than Usura or Nodus but more deliberate when
-          they appear. They come to make specific arrangements and leave when those arrangements are concluded.</p>
+          the opening - a door between spaces, guarded, with a spear point at the top and its reflection below as though
+          the gate descends as much as it rises. It is the image of a threshold that has always been tended and always
+          will be. It appears on Terminus shipping documents as a small watermark, and on the doors of certain harbor
+          buildings that have been there longer than the buildings around them.</p>
+        <p>At Whisperglass, Terminus representatives are less frequent than Usura or Nodus but more deliberate when they
+          appear. They come to make specific arrangements and leave when those arrangements are concluded.</p>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Compact &amp; What's in the Water</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Compact &amp; What's in the Water</span></div>
         <div class="rules-block" data-label="Old Knowledge">
           <p>The compact is the foundation of everything Terminus is. A century ago, the founding families made an
-            arrangement with something in the eastern harbor — something that was already there when the first ships
+            arrangement with something in the eastern harbor - something that was already there when the first ships
             arrived, something that had been there before the city had a name. The terms of the arrangement have never
             been written down in any document that has survived.</p>
           <p>What is known within Terminus: the compact is honored through specific acts performed at specific times by
-            specific members of the inner structure. Harlan Mose knows what these are. Rut knows what these are. A
-            small number of others do. What they involve is not discussed outside that circle.</p>
+            specific members of the inner structure. Harlan Mose knows what these are. Rut knows what these are. A small
+            number of others do. What they involve is not discussed outside that circle.</p>
           <p>What the thing in the water is cannot be cleanly stated. It is old. It is patient in a way that makes
-            vampires seem impulsive. It is not malevolent toward Terminus — the compact has held for a century without
-            incident — but it is not benevolent either. It is interested in the threshold between the harbor and what
+            vampires seem impulsive. It is not malevolent toward Terminus - the compact has held for a century without
+            incident - but it is not benevolent either. It is interested in the threshold between the harbor and what
             lies beyond it, and Terminus's role, as best anyone within the organization understands it, is to tend that
             threshold on its behalf.</p>
         </div>
         <blockquote>The hidden society leaves this alone. The correct attitude toward something that has been in the
           eastern harbor since before the city had walls is the same attitude the harbor workers have developed: do not
-          look directly at it, do not speak about it carelessly, and do not mistake its patience for
-          indifference.</blockquote>
+          look directly at it, do not speak about it carelessly, and do not mistake its patience for indifference.
+        </blockquote>
       </div>
-
       <div class="npc-row">
         <div class="npc-card">
           <div class="npc-role">Leader</div>
           <div class="npc-name">Harlan Mose</div>
-          <p class="npc-desc">Third generation of his family to hold Terminus's leadership, which means he inherited
-            the compact along with the shipping ledgers and the particular cast of knowledge that comes from growing
-            up adjacent to <em>something old and patient in the water.</em> A large, unhurried man in his fifties with
-            the weathered bearing of someone who has spent genuine time on docks in all weather. Direct, specific, and
+          <p class="npc-desc">Third generation of his family to hold Terminus's leadership, which means he inherited the
+            compact along with the shipping ledgers and the particular cast of knowledge that comes from growing up
+            adjacent to <em>something old and patient in the water.</em> A large, unhurried man in his fifties with the
+            weathered bearing of someone who has spent genuine time on docks in all weather. Direct, specific, and
             honest. A deal with Harlan Mose is a deal. He does not renegotiate. He does not forget. At Whisperglass he
             occupies whichever booth is available and watches the performances with an uncomplicated appreciation the
             staff find quietly refreshing.</p>
@@ -1959,19 +1983,18 @@
         <div class="npc-card">
           <div class="npc-role">Enforcer</div>
           <div class="npc-name">Rut</div>
-          <p class="npc-desc">Has worked the eastern docks her entire adult life and carries that in her body —
+          <p class="npc-desc">Has worked the eastern docks her entire adult life and carries that in her body -
             economical, weather-worn, with the specific physical competence of someone who has spent years moving heavy
             things in uncertain conditions. Not tall. Built in the way of someone whose strength is entirely functional
             and has never needed to perform. Aware of what is in the water. Grew up aware of it. This has given her a
-            working familiarity with fear — not the absence of it, but a settled arrangement with that knowledge. Her
-            role
-            includes the specific task of managing the threshold between <em>the eastern docks and what lies beyond
+            working familiarity with fear - not the absence of it, but a settled arrangement with that knowledge. Her
+            role includes the specific task of managing the threshold between <em>the eastern docks and what lies beyond
               them.</em></p>
         </div>
         <div class="npc-card">
           <div class="npc-role">Fixer</div>
           <div class="npc-name">Petra</div>
-          <p class="npc-desc">Terminus's interface with the rest of the hidden society — handles arrangements requiring
+          <p class="npc-desc">Terminus's interface with the rest of the hidden society - handles arrangements requiring
             more political nuance than Harlan Mose prefers to deploy. Books the Whisperglass booth, attends faction
             meetings, manages Terminus's relationships with Usura and Nodus with the specific patience of someone who
             finds both organizations mildly exhausting but professionally necessary. A second-generation affiliate
@@ -1980,13 +2003,10 @@
             organization entirely approves of.</p>
         </div>
       </div>
-
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Relationships</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Relationships</span></div>
         <p><strong>With Usura:</strong> mutual distance sustained by mutual respect for limits. Usura cannot leverage
-          what Terminus holds at the harbor — the compact is not a financial instrument and cannot be bought,
+          what Terminus holds at the harbor - the compact is not a financial instrument and cannot be bought,
           refinanced, or restructured. Terminus does not need Usura's capital the way Nodus does, which removes the
           usual power dynamic. The two organizations leave each other alone with the specific deliberateness of entities
           that have assessed each other and decided the cost of conflict is not worth the gain.</p>
@@ -2015,9 +2035,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Districts</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Districts</span></div>
         <p><strong>The Pale Quarter</strong> is the old financial district, stone buildings, narrow streets, the kind of
           wealth that doesn't need to announce itself. Usura's operations are concentrated here. After dark it belongs
           almost entirely to the hidden society.</p>
@@ -2037,9 +2055,7 @@
           cross after midnight.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Harbor</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Harbor</span></div>
         <p>The harbor is the oldest part of the city. The eastern docks in particular predate any current record of the
           city's founding, which is either a bureaucratic oversight or something the city prefers not to examine too
           closely.</p>
@@ -2054,9 +2070,7 @@
         </p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Registry of Practitioners</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Registry of Practitioners</span></div>
         <p>The Registry of Practitioners is the government's official mechanism for tracking and regulating magical
           ability within the city. Registration is legally required for anyone whose abilities meet a defined threshold,
           a threshold that practitioners consistently describe as arbitrarily set and selectively enforced.</p>
@@ -2070,9 +2084,7 @@
           practitioners as readily as magical goods.</p>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">The Office (Government Bureau)</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">The Office (Government Bureau)</span></div>
         <p>The Office is the branch of city government responsible for supernatural affairs. It monitors magical
           incidents, enforces Registry compliance, investigates supernatural crimes when they breach into mundane
           visibility, and maintains a studied institutional ambiguity about how much it actually knows.</p>
@@ -2096,9 +2108,7 @@
     </div>
     <div class="container">
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">How Magic Works</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">How Magic Works</span></div>
         <p>Magic operates on the principle of <em>cost and consent</em>. Every working requires something, attention,
           energy, material component, or time, and the scale of the working determines the scale of the cost. Small
           enchantments (light, warmth, basic glamour) can be maintained almost indefinitely by a trained practitioner.
@@ -2115,9 +2125,7 @@
         </blockquote>
       </div>
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-title">Old Debts &amp; Binding Promises</span>
-        </div>
+        <div class="entry-header"><span class="entry-title">Old Debts &amp; Binding Promises</span></div>
         <p>In the hidden society, certain categories of promise carry weight beyond social expectation. A sworn debt,
           made in the right company, with the right witnesses or words, is binding in a way that manifests physically.
           Breaking one is not simply a social failure; it tends to be felt.</p>
