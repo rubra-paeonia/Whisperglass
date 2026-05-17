@@ -194,6 +194,42 @@
       color: var(--gold-dim);
     }
 
+    /* BACK TO TOP */
+    #back-to-top {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2rem;
+      z-index: 999;
+      width: 46px;
+      height: 46px;
+      background: rgba(35, 24, 32, 0.55);
+      border: 1px solid var(--gold-dim);
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      box-shadow: 0 0 16px rgba(139, 0, 0, 0.3);
+      transform: rotate(45deg);
+    }
+
+    #back-to-top svg {
+      transform: rotate(-45deg);
+    }
+
+    #back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    #back-to-top:hover {
+      border-color: var(--gold);
+      box-shadow: 0 0 28px rgba(200, 0, 0, 0.55), 0 0 8px rgba(201, 168, 76, 0.3);
+    }
+
     /* LAYOUT */
     .container {
       max-width: 900px;
@@ -1737,7 +1773,8 @@
             to, good at making people feel heard, absolutely clear about what she is and is not authorized to offer. She
             does not oversell. She does not make promises Usura won't keep. This makes her, by hidden society standards,
             <em>unusually trustworthy</em> as a first contact. She frequents Whisperglass independently and has her own
-            relationships with the staff.</p>
+            relationships with the staff.
+          </p>
         </div>
       </div>
       <div class="entry">
@@ -2071,47 +2108,52 @@
     </div>
   </section>
 
-<!-- SECTION VII: WHAT IS KNOWN -->
-<section id="known">
-  <div class="section-header">
-    <span class="section-number">Section VII</span>
-    <h2 class="section-title">What Is Known</h2>
-    <p class="section-desc">Knowledge that circulates in the hidden society. Consensus, rumor, and hard experience.</p>
-    <div class="section-divider"><span class="section-divider-gem"></span></div>
-  </div>
-  <div class="container">
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">How Magic Works</span></div>
-      <p>Practitioners don't agree on much, but they agree on cost. Every working takes something: attention, energy,
-        time, material, a portion of something harder to name. The scale of what you ask for determines the scale of
-        what you give up. Small enchantments, light, warmth, basic glamour, can be maintained almost indefinitely by
-        someone trained enough. Large workings leave marks. Exhaustion is the polite description. Experienced
-        practitioners talk about going <em>slightly translucent</em>, a thinning of the self that doesn't fully reverse.
+  <!-- SECTION VII: WHAT IS KNOWN -->
+  <section id="known">
+    <div class="section-header">
+      <span class="section-number">Section VII</span>
+      <h2 class="section-title">What Is Known</h2>
+      <p class="section-desc">Knowledge that circulates in the hidden society. Consensus, rumor, and hard experience.
       </p>
-      <p>You cannot easily hide an active working from others who know what they're looking for. The city's trained
-        community feels them the way you hear music through walls. Whether they can identify the tune depends on skill
-        and proximity.</p>
-      <p>Enchantments embedded in objects or locations are a different matter. They draw slowly from their environment
-        and can outlast whoever made them by centuries. Whisperglass appears to contain several. No current staff member
-        has been here long enough to know who put them there.</p>
-      <blockquote><strong>Glamour,</strong> the magic of appearance and impression, is among the most common and most
-        misunderstood workings. It changes how something looks. It cannot change what something is.</blockquote>
+      <div class="section-divider"><span class="section-divider-gem"></span></div>
     </div>
-    <div class="entry">
-      <div class="entry-header"><span class="entry-title">Old Debts &amp; Binding Promises</span></div>
-      <p>Certain promises, made in the right company with the right witnesses, carry weight that goes beyond social
-        obligation. Breaking one isn't simply a failure of character. It tends to be felt.</p>
-      <p>The hidden society doesn't fully understand the mechanism. What remains consistent is the pattern: debts sworn
-        here hold. Parties who might otherwise reconsider find themselves reluctant to test what happens if they don't.
-      </p>
-      <p>This is part of why the booths matter. A deal made at Whisperglass is a deal made, and everyone who uses the
-        curtained booths knows it, which is precisely why they keep coming back.</p>
-      <blockquote>New arrivals are frequently not warned about this until after they've already made a promise inside
-        one. The established community considers this a useful sorting mechanism. Those who keep their word naturally
-        had nothing to worry about.</blockquote>
+    <div class="container">
+      <div class="entry">
+        <div class="entry-header"><span class="entry-title">How Magic Works</span></div>
+        <p>Practitioners don't agree on much, but they agree on cost. Every working takes something: attention, energy,
+          time, material, a portion of something harder to name. The scale of what you ask for determines the scale of
+          what you give up. Small enchantments, light, warmth, basic glamour, can be maintained almost indefinitely by
+          someone trained enough. Large workings leave marks. Exhaustion is the polite description. Experienced
+          practitioners talk about going <em>slightly translucent</em>, a thinning of the self that doesn't fully
+          reverse.
+        </p>
+        <p>You cannot easily hide an active working from others who know what they're looking for. The city's trained
+          community feels them the way you hear music through walls. Whether they can identify the tune depends on skill
+          and proximity.</p>
+        <p>Enchantments embedded in objects or locations are a different matter. They draw slowly from their environment
+          and can outlast whoever made them by centuries. Whisperglass appears to contain several. No current staff
+          member
+          has been here long enough to know who put them there.</p>
+        <blockquote><strong>Glamour,</strong> the magic of appearance and impression, is among the most common and most
+          misunderstood workings. It changes how something looks. It cannot change what something is.</blockquote>
+      </div>
+      <div class="entry">
+        <div class="entry-header"><span class="entry-title">Old Debts &amp; Binding Promises</span></div>
+        <p>Certain promises, made in the right company with the right witnesses, carry weight that goes beyond social
+          obligation. Breaking one isn't simply a failure of character. It tends to be felt.</p>
+        <p>The hidden society doesn't fully understand the mechanism. What remains consistent is the pattern: debts
+          sworn
+          here hold. Parties who might otherwise reconsider find themselves reluctant to test what happens if they
+          don't.
+        </p>
+        <p>This is part of why the booths matter. A deal made at Whisperglass is a deal made, and everyone who uses the
+          curtained booths knows it, which is precisely why they keep coming back.</p>
+        <blockquote>New arrivals are frequently not warned about this until after they've already made a promise inside
+          one. The established community considers this a useful sorting mechanism. Those who keep their word naturally
+          had nothing to worry about.</blockquote>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- BUSINESS CARD SPREAD -->
   <div class="card-spread">
@@ -2139,6 +2181,21 @@
     <img class="footer-flower" src="https://i.postimg.cc/LXLrNDxq/watermark-flower.png" alt="Watermark">
     <p class="footer-credit">Created by K0NTESSA</p>
   </footer>
+  <!-- BACK TO TOP -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+        stroke-linejoin="round" />
+    </svg>
+  </button>
+
+  <script>
+    const btn = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      btn.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  </script>
 </body>
 
 </html>
