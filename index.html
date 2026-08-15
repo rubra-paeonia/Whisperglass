@@ -1100,7 +1100,7 @@
   </div>
 
   <!-- TABLE OF CONTENTS -->
-  <div class="container">
+  <div class="container" id="toc">
     <div class="toc">
       <p class="toc-title">Contents</p>
       <ul class="toc-list">
@@ -2254,8 +2254,7 @@
     <p class="footer-credit">Created by K0NTESSA © 2026</p>
   </footer>
   <!-- BACK TO TOP -->
-  <button id="back-to-top" aria-label="Back to top" title="Back to top"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <button id="back-to-top" aria-label="Back to top" title="Back to top" onclick="scrollToToc()">
     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
         stroke-linejoin="round" />
@@ -2267,6 +2266,13 @@
     window.addEventListener('scroll', () => {
       btn.classList.toggle('visible', window.scrollY > 400);
     }, { passive: true });
+
+    function scrollToToc() {
+        const toc = document.getElementById('toc');
+        const offset = 300; // adjust this number for more/less breathing room
+        const top = toc.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
   </script>
 </body>
 
